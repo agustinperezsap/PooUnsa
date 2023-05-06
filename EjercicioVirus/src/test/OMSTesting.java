@@ -9,11 +9,11 @@ public class OMSTesting {
         Scanner entrada = new Scanner(System.in);
         Virus v1;
         int intento, contador = 0;
-        System.out.println("Ingrese el nombre a del virus a neutralizar");
+        System.out.print("Ingrese el nombre a del virus a neutralizar: ");
         v1 = new Virus(entrada.nextLine());
         System.out.println("El virus es: " + v1.toString());
         do {
-            System.out.println("Ingrese un adn para tratar de neutralizar: ");
+            System.out.print("Ingrese un adn para tratar de neutralizar: ");
             intento = entrada.nextInt();
             contador++;
             v1.neutralizar(intento);
@@ -21,8 +21,9 @@ public class OMSTesting {
                 System.out.println("El virus no fue neutralizado, nocividad: " + v1.esNocivo());
             }
         } while (v1.esNocivo());
-        System.out.println("El virus fue neutralizado nocividad : " + v1.esNocivo());
+        
         System.out.println("Cantidad de intentos realizados para poder neutralizar: " + contador);
+        System.out.println("El virus fue neutralizado, nocividad : " + v1.esNocivo());
 
     }
 }
