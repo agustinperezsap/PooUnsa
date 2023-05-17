@@ -4,6 +4,8 @@ package datos;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 
 
 public class Fecha {
@@ -41,6 +43,19 @@ public class Fecha {
     public void setDia(int dia){
         this.fechaYHora = this.fechaYHora.withDayOfMonth(dia);
     }
+    
+//    public int diferenciaDias(Fecha fechaComparacion) {
+//        this.fechaYHora = LocalDateTime.now();
+//        long tiempo = ChronoUnit.DAYS.between(this.fechaYHora, (Temporal) fechaComparacion);
+//        return (int) tiempo;
+//    }
+    
+    public int diferenciaDias(Fecha fechaComparacion) {
+    LocalDateTime fechaActual = LocalDateTime.now();
+    long tiempo = ChronoUnit.DAYS.between(this.fechaYHora, fechaComparacion.fechaYHora);
+    return (int) tiempo;
+    }
+
     
     
     @Override
