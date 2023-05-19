@@ -17,5 +17,6 @@ public class TestClinica {
         }
         
         System.out.println("Diferencia de ingresos de los pacientes: " + pacientes[0].getFecha().diferenciaDias(fechaIngreso));
+        
     }
 }
